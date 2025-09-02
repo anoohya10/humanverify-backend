@@ -13,7 +13,7 @@ def home():
 def verify():
     return jsonify({
         'status': 'verified',
-        'redirect': '/VerifiedPage'
+        'redirect': 'pages/VerifiedPage'
     })
 
 if __name__ == '__main__':
