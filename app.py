@@ -1,8 +1,13 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})  # Enable CORS for frontend requests
+CORS(app, resources="*")  # Enable CORS for frontend requests
+
+@app.route("/")
+def home():
+    return jsonify({"message": "Backend is running!"})
 
 @app.route('/verify',methods=['GET'])
 def verify():
